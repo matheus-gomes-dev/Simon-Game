@@ -1,0 +1,46 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Abel">
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One" rel="stylesheet"> 
+  <link href="./css/main.css" rel="stylesheet">
+  <script type="text/javascript" src="./js/angular.min.js"></script> 
+  <script type="text/javascript" src="./js/main.js"></script> 
+</head>
+
+<body>
+  <div ng-app="simonApp" ng-controller="simonGame">
+    <div id="gameSet">
+      <div id="topHalf">
+        <div ng-mousedown="greenClickDown()" ng-mouseup="greenClickUp()" id="greenButton"></div>
+        <div ng-mousedown="redClickDown()" ng-mouseup="redClickUp()" id="redButton"></div>
+      </div>
+      <div id="bottomHalf">
+        <div ng-mousedown="yellowClickDown()" ng-mouseup="yellowClickUp()" id="yellowButton"></div>
+        <div ng-mousedown="blueClickDown()" ng-mouseup="blueClickUp()" id="blueButton"></div>
+        <div id="circle-center">
+          <div id="togglePower">
+            <label class="switch">
+              <input type="checkbox" checked>
+              <div class="slider" ng-click="togglePower()"></div>
+            </label>
+          </div>
+          <p id="gameTitle"> Simon </p>
+          <p id="off"> OFF </p>
+          <p id="on"> ON </p>
+          <div id="display">
+            <p id="displayContent">{{displayCounter}}</p>
+          </div>
+          <p id="counter">COUNT</p>
+          <div ng-click="clickStart()" id="startButton">
+            <p id="start">START</p>
+          </div>
+          <div ng-click="strictSwitch()" id="strictButton">
+            <div id="strictLed"></div>
+            <p id="strict">STRICT</p>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</body>
